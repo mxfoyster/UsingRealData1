@@ -13,4 +13,4 @@ The bar chart is up and working, so it's a start!
 
 ## Problem with Github Push
 
-There is a potential problem. When pushing the data file, it decided to replace our `lf`'s with `cflf`'s. Therefore, if anyone clones this and uses the datafile as is, I am doubtful it will parse correctly! You can always download your own?  
+There is a potential problem. When pushing the data file, it decided to replace our `lf`'s with `crlf`'s. Therefore, if anyone clones this and uses the datafile as is, I am doubtful it will parse correctly! You can always download your own?  
