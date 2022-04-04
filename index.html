@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Using Real Data</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
+	<script type="text/javascript" src="js/ChartPlotters.js" defer></script>
+	<script type="text/javascript" src="js/ConvertData.js" defer></script>
+	
+</head>
+
+<body>
+<div class = "grid-container">
+
+	<div class="header" id="">
+	<h3>Using Real Data v1.0.0</h3>
+	<h3>Seasonal trends in Water Sports (UK)</h3>
+	</div>
+	
+	<div class="left" id="">
+	<h4>HOME</h4>	
+	<h4>LINKS</h4>
+	<h4>CONTACT</h4>
+	</div>
+
+	<div class="right" id="">
+	<h4>Introduction</h4>
+	<p>This exercise is to demonstrating the handling of real data presented through HTML on a website. The Google Trends data I am using has been downloaded as .csv file. This is the long way around. Google Trends offers the capability to embed graphs etc directly into a web page but that would defeat the object of the exercise. I intend to use Chart.js to display some of the information.</p>
+
+	<p>The information itself will simply compare the interest of various watersports in comparison to paddlesports at given times of the year.</p>
+	<h4>Search for Paddlesports (April 2021 - April 2022)</h4>
+	<canvas id="ChartA"></canvas>
+	<div id="demo"></div>
+	<div id="demo2"></div>
+	<div id="demo3"></div>
+	<div id="demo4"></div>
+	<div id="demo5"></div>
+	</div>
+
+	<div class="footer" id="">
+	<p>Data downloaded from <a href="https://trends.google.com/">https://trends.google.com/</a> April 2022</p>
+	<p>This project is released under GNU/GPL 3.00 license. Repository at <a href="https://github.com/mxfoyster/UsingRealData1">https://github.com/mxfoyster/UsingRealData1</a></p>
+	<p>Use how you like, but don't blame me :-D Mark Foyster 2022</p>
+	</div>
+</div>
+</body>
+</html>
