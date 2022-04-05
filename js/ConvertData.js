@@ -27,9 +27,11 @@ function DoDoneLoadingStuff()
 	for (i = 0; i < parsedDataDate.length; i++)
 			weekData[i]= "Week "+ (i + 1); //we use week number instead of date, it's neater!
 	
-	DrawBarChart(chartTitle, weekData, parsedDataVal); //Draw the bar chart
-	DrawLineChart(chartTitle, weekData, parsedDataVal);
-	DrawBarChartMonthly(chartTitle, parsedDataDate, parsedDataVal); //Draw the bar chart
+	ChartPlotter("ChartA", weekData, parsedDataVal, "blue", "bar", chartTitle);
+	ChartPlotter("ChartB", weekData, parsedDataVal, "blue", "line", chartTitle);
+	DrawBarChartMonthly(chartTitle, parsedDataDate, parsedDataVal); //Draw the monthly bar chart
+	DrawBarChartMonthlyAverage(chartTitle, parsedDataDate, parsedDataVal); //Draw the month avg bar chart
+
 }
 
 //Removes and returns the title from the dataStream string
@@ -72,6 +74,5 @@ function ParseStreamData()
 		var strSplitResult = currentString.split(",")
 			parsedDataDate[pDIndex] = strSplitResult[0];
 			parsedDataVal[pDIndex] = strSplitResult[1];
-		
 	}
 }

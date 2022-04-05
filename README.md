@@ -3,6 +3,8 @@ Just exercises using real data, I will use Google Trends data downloaded as .csv
 
 The data is from [Google Trends](https://trends.google.com/trends/explore?geo=GB&q=paddlesports). 
 
+***NOTE*** THIS IS AN EDUCATIONAL EXERCISE. Some functions are repeated almost identically. This is for demonstration purposes so I can show the impact of a subtle improvement on the data:
+
 ## First Chart
 
 I have loaded the CSV, stripped and kept the title text for the chart. Next, I separated the values via `,` and `\n` into two arrays I can use for the chart.
@@ -16,6 +18,14 @@ The bar chart is up and working, so it's a start!
 I now have a line chart to show the data a bit clearer. This is an improvement but the week by week variations made it difficult to visualise the data. With that in mind, belwo this I have a bar chart by month. **NOTE** Improvement needed here as different months have a different number of weeks. Therefore, I will have to go back and average the data according to the number of weeks to get a more accurate picture.
 
 There have been some improvements to the menu and other areas!
+
+## Average Bar Chart
+
+So, with consideration for the above, I now have an average per moth bar chart and you can clearly see 
+the difference. This proves how inaccurate the data is if you do not average it. This is pretty basic 
+stuff but I wanted to show how if you don't think things through, the data can misrepresent the data
+
+
 
 ## Problem with Github Push
 
