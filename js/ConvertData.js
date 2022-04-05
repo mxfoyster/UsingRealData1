@@ -1,10 +1,12 @@
 var dataStream;
 var parsedDataDate = [0];
 var parsedDataVal = [0];
-LoadDoc();
+var currentFileName;
+
+//LoadDoc(currentFileName);
 
 //load the file
-function LoadDoc() 
+function LoadDoc(fileName) 
 {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() 
@@ -12,7 +14,7 @@ function LoadDoc()
      dataStream = this.responseText;
 	 DoDoneLoadingStuff();//do everything we have to do with this data WITHIN THIS FUNCTION 
     }
-  xhttp.open("GET", "data/PaddleData1yr.csv", true);
+  xhttp.open("GET", fileName, true);
   xhttp.send();
 }
 
@@ -20,18 +22,7 @@ function LoadDoc()
 //this is the easiest way to be sure it's loaded and we don't have sync issues.
 function DoDoneLoadingStuff()
 {
-	var chartTitle = SplitTitle(); //remove and store title from dataStream
-	ParseStreamData(); //split the rest into our arrays
-	
-	var weekData = [0];
-	for (i = 0; i < parsedDataDate.length; i++)
-			weekData[i]= "Week "+ (i + 1); //we use week number instead of date, it's neater!
-	
-	ChartPlotter("ChartA", weekData, parsedDataVal, "blue", "bar", chartTitle);
-	ChartPlotter("ChartB", weekData, parsedDataVal, "blue", "line", chartTitle);
-	DrawBarChartMonthly(chartTitle, parsedDataDate, parsedDataVal); //Draw the monthly bar chart
-	DrawBarChartMonthlyAverage(chartTitle, parsedDataDate, parsedDataVal); //Draw the month avg bar chart
-
+	DoPageSpecificStuff();
 }
 
 //Removes and returns the title from the dataStream string
@@ -47,7 +38,7 @@ function SplitTitle()
 			i = dataStream.length;
 		}
 	}
-	return chartTitle
+	return chartTitle;
 }
 
 //separate dataStream by comma's and cr's into two arrays (Title must be stripped first)
@@ -72,7 +63,7 @@ function ParseStreamData()
 		}
 		//not very DRY, but we must repeat to get the last one out! Not worth it's own function
 		var strSplitResult = currentString.split(",")
-			parsedDataDate[pDIndex] = strSplitResult[0];
-			parsedDataVal[pDIndex] = strSplitResult[1];
+		parsedDataDate[pDIndex] = strSplitResult[0];
+		parsedDataVal[pDIndex] = strSplitResult[1];
 	}
 }

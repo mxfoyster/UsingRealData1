@@ -1,6 +1,6 @@
 const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; 
 
-function DrawBarChartMonthly(chartTitle, xArray, yArray)
+function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray)
 {
 //****************************first we must convert the data******************************************
 	var theseMonths = [];
@@ -31,7 +31,7 @@ function DrawBarChartMonthly(chartTitle, xArray, yArray)
 	theseMonthsDat.push(thisNumber); //and the data
 	let barColours = BuildColorArray(theseMonths.length);	
 //****************************now we can plot using our new arrays*************************************
-	ChartPlotter("ChartC", theseMonths, theseMonthsDat, barColours, "bar", chartTitle);
+	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle);
 	
 }
 
@@ -39,7 +39,7 @@ function DrawBarChartMonthly(chartTitle, xArray, yArray)
 //PLEASE NOTE: I know this is not DRY.... I would normally ditch ALL the above in favour of this 
 //average version. However, I wish to highlight the differences between these two hence I will 
 //leave the above function in as is!
-function DrawBarChartMonthlyAverage(chartTitle, xArray, yArray)
+function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray)
 {
 //****************************first we must convert the data******************************************
 	var theseMonths = [];
@@ -75,7 +75,7 @@ function DrawBarChartMonthlyAverage(chartTitle, xArray, yArray)
 	let barColours = BuildColorArray(theseMonths.length);	
 
 //****************************now we can plot using our new arrays*************************************
-	ChartPlotter("ChartD", theseMonths, theseMonthsDat, barColours, "bar", chartTitle);	
+	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle);	
 }
 
 

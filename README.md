@@ -3,7 +3,9 @@ Just exercises using real data, I will use Google Trends data downloaded as .csv
 
 The data is from [Google Trends](https://trends.google.com/trends/explore?geo=GB&q=paddlesports). 
 
-***NOTE*** THIS IS AN EDUCATIONAL EXERCISE. Some functions are repeated almost identically. This is for demonstration purposes so I can show the impact of a subtle improvement on the data:
+***NOTE*** THIS IS AN EDUCATIONAL EXERCISE. Some functions are repeated almost identically. This is for demonstration purposes so I can show the impact of a subtle improvement on the data. 
+
+I am currently using this in this readme in a similar fashion to a changelog. It's a very direct way to see my progress and provides more information that the *'commit messages'*. I may move this to a separate changelog later.
 
 ## First Chart
 
@@ -25,7 +27,11 @@ So, with consideration for the above, I now have an average per moth bar chart a
 the difference. This proves how inaccurate the data is if you do not average it. This is pretty basic 
 stuff but I wanted to show how if you don't think things through, the data can misrepresent the data
 
+## Paddlesports Page
 
+I have made a page dedicated to paddlesports data which uses a slightly refactored version of the code that allows me to load more than one file and display a chart for each. 
+
+Here I compare data for the paddlesports search phrase with the more direct phrases of *Canoeing*, *Kayaking* and *Paddleboarding*. I need to improve the way I handle asynchronous issues, I currently cheat with a delay. This might be an excellent opportunity to get to grips with `promises` and `Async Await` so watch this space.
 
 ## Problem with Github Push
 
