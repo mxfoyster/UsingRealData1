@@ -28,6 +28,8 @@ function DoDoneLoadingStuff()
 			weekData[i]= "Week "+ (i + 1); //we use week number instead of date, it's neater!
 	
 	DrawBarChart(chartTitle, weekData, parsedDataVal); //Draw the bar chart
+	DrawLineChart(chartTitle, weekData, parsedDataVal);
+	DrawBarChartMonthly(chartTitle, parsedDataDate, parsedDataVal); //Draw the bar chart
 }
 
 //Removes and returns the title from the dataStream string

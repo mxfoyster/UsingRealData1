@@ -11,6 +11,12 @@ Once I had the first chart up and running, the dates looked untidy, so I generat
 
 The bar chart is up and working, so it's a start!
 
+## More Charts added
+
+I now have a line chart to show the data a bit clearer. This is an improvement but the week by week variations made it difficult to visualise the data. With that in mind, belwo this I have a bar chart by month. **NOTE** Improvement needed here as different months have a different number of weeks. Therefore, I will have to go back and average the data according to the number of weeks to get a more accurate picture.
+
+There have been some improvements to the menu and other areas!
+
 ## Problem with Github Push
 
 There is a potential problem. When pushing the data file, it decided to replace our `lf`'s with `crlf`'s. Therefore, if anyone clones this and uses the datafile as is, I am doubtful it will parse correctly! You can always download your own?  

@@ -32,11 +32,6 @@ h3
   font-size: 35px;
 }
 
-/*The chart box*/
-#webChart
-{
-
-}
 
 /* The grid container */
 .grid-container 
@@ -53,8 +48,7 @@ h3
 /* Style the left column */
 .left 
 {
-   background-color: #dddddd;
-  opacity: 0.95;
+  background-color: rgba(221, 221, 221, 0.95);
   grid-area: left;
   text-align: center;
   padding: 10px;
@@ -83,6 +77,31 @@ h3
   color: darkblue;
 }
 
+/*The chart boxes*/
+#ChartA, #ChartB, #ChartC
+{
+		width: auto;
+		height: auto;
+		max-width: 1000px;
+}
+
+#sideMenu
+{
+	padding-left: 5rem;
+	padding-right: 5rem;
+}
+
+.menuBtn
+{
+	background-color: rgba(105, 105, 105,1);
+	font-size: 1.5rem;
+	padding: 0.5rem;
+}
+.menuGap
+{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
 
 .title
 {
@@ -136,7 +155,7 @@ h3
       'footer';
 	}
 	
-	#webChart
+	#ChartA
 	{
 		width: auto;
 		height: auto;
