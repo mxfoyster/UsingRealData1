@@ -33,6 +33,14 @@ I have made a page dedicated to paddlesports data which uses a slightly refactor
 
 Here I compare data for the paddlesports search phrase with the more direct phrases of *Canoeing*, *Kayaking* and *Paddleboarding*. I need to improve the way I handle asynchronous issues, I currently cheat with a delay. This might be an excellent opportunity to get to grips with `promises` and `Async Await` so watch this space.
 
+## Asynchronous Mods
+
+Substantial refactoring has enabled me to use a `Promise` to ensure the data is loaded BEFORE we plot the chart. Furthermore, when we move on to load another file, because we go through the same process, we know the last chart is ready which prevents them trying to load at the same time. Before this modification, without delays, several charts would try and load on the same canvas because the Chart.js could not yet see that we had switched to another one. Such is the nature of Asynchronous Javascript!
+
+The file loading is now done with the `Fetch()` API as opposed to `XmlHttpRequest`. Because it uses `Promises`, this made moving over to them within my `LoadDoc()` function MUCH easier. I'll be doin things this way in the future!
+
+Overall, the code is tidier now thanks to these changes.
+
 ## Problem with Github Push
 
 There is a potential problem. When pushing the data file, it decided to replace our `lf`'s with `crlf`'s. Therefore, if anyone clones this and uses the datafile as is, I am doubtful it will parse correctly! You can always download your own?  

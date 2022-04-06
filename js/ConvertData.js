@@ -1,34 +1,36 @@
+//Globals.. Our data from the file and anything we need to access
+//throughout ALL the scripts (eg the promise) are declared here!!
+var chartTitle;
 var dataStream;
 var parsedDataDate = [0];
 var parsedDataVal = [0];
 var currentFileName;
+var myPromise;
 
-//LoadDoc(currentFileName);
 
-//load the file
+//This is the main function. Not only does it open the file, it calls the
+//necessary functions to process the data from csv into appropriate fields
 function LoadDoc(fileName) 
 {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() 
+	//This is important!! it's how we stop the rest of the code from
+	//crashing by maing it wait till the data is all processed
+	myPromise = new Promise(function(myResolve, myReject) 
 	{
-     dataStream = this.responseText;
-	 DoDoneLoadingStuff();//do everything we have to do with this data WITHIN THIS FUNCTION 
-    }
-  xhttp.open("GET", fileName, true);
-  xhttp.send();
-}
-
-//everything we must to with data from the file must be done in here
-//this is the easiest way to be sure it's loaded and we don't have sync issues.
-function DoDoneLoadingStuff()
-{
-	DoPageSpecificStuff();
+		fetch(fileName)
+			.then(response => response.text()) 
+			.then(textString => 
+			{
+			dataStream = textString;	
+			SplitTitle();
+			ParseStreamData();
+			myResolve("Success"); //Promise resolved.. 
+			});
+	});
 }
 
 //Removes and returns the title from the dataStream string
 function SplitTitle()
 {
-	var chartTitle;
 	for(i=0; i<dataStream.length; i++)
 	{
 		if (dataStream.charAt(i)== '2') 

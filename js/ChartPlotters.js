@@ -90,9 +90,9 @@ function BuildColorArray(arrayLength)
 
 
 //the Chart.js code extracted to separate function for DRY purposes
-function ChartPlotter(chartName, xArray, yArray, colours, type, chartTitle)
+function ChartPlotter(chartCanvasID, xArray, yArray, colours, type, chartTitle)
 {
-		new Chart(chartName, {
+		new Chart(chartCanvasID, {
 		type: type,
 		data: {
 		labels: xArray,
