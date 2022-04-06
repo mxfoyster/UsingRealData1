@@ -41,6 +41,15 @@ The file loading is now done with the `Fetch()` API as opposed to `XmlHttpReques
 
 Overall, the code is tidier now thanks to these changes.
 
+## More Data
+
+It is VERY easy now to generate our bar chart. I made another page comparing different watersports by month with their search hit ratio. It only took a few minutes. I've pretty much proved the point now. I will have to consider what direction if any to take this to next. Meanwhile, I have uploaded this version to some space I have so we can see a live version! It's here [http://mark-foyster.epizy.com/watersports/index.html](http://mark-foyster.epizy.com/watersports/index.html). It's nothing special, but I had funa nd learnt something in the process.
+
+## What's Next?
+
+I really don't know. Open to ideas....
+
+
 ## Problem with Github Push
 
 There is a potential problem. When pushing the data file, it decided to replace our `lf`'s with `crlf`'s. Therefore, if anyone clones this and uses the datafile as is, I am doubtful it will parse correctly! You can always download your own?  
