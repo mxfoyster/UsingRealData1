@@ -9,7 +9,8 @@ function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray)
 	let monthIndex=0;
 	let thisNumber=0;
 	
-	for (i=0; i < xArray.length; i++)
+	let xArr_Length = xArray.length;
+	for (i=0; i < xArr_Length; i++)
 	{
 		if (xArray[i].slice(5,7) == thisMonth) //if still on same month
 			thisNumber += Number(yArray[i]); //add data at this index to the month
@@ -49,7 +50,8 @@ function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray)
 	let weeksPerMonth=0;
 	let thisNumber=0;
 	
-	for (i=0; i < xArray.length; i++)
+	let xArr_Length = xArray.length;
+	for (i=0; i < xArr_Length; i++)
 	{	
 			if (xArray[i].slice(5,7) == thisMonth) //if still on same month
 			{

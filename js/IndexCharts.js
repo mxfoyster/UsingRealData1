@@ -2,13 +2,15 @@
 LoadDoc("data/PaddleData1yr.csv");
 myPromise.then(function(value) 
 {
-  DoPageSpecificStuff();
-  //DrawBarChartMonthlyAverage("ChartA", chartTitle, parsedDataDate, parsedDataVal);
+  PlotIndexCharts();
 });
-function DoPageSpecificStuff()
+
+//Because we plot from the same file and the data is already processed, we don't need to use a Promise
+function PlotIndexCharts()
 {	
 	var weekData = [0];
-	for (i = 0; i < parsedDataDate.length; i++)
+	let p_D_DateLength = parsedDataDate.length;
+	for (i = 0; i < p_D_DateLength; i++)
 			weekData[i]= "Week "+ (i + 1); //we use week number instead of date, it's neater!
 	
 	ChartPlotter("ChartA", weekData, parsedDataVal, "blue", "bar", chartTitle);

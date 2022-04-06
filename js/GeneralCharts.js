@@ -1,10 +1,5 @@
-var currentFileName;
-var thisPageChart;
-var chart1Loaded = false;
-var chart2Loaded = false;
 
-
-//we can now load sychronously the charts thanks to our Promise within the LoadDoc func.
+//We use promises again. See PaddleCharts.js
 LoadDoc("data/PaddleData1yr.csv");
 myPromise.then(function(value) 
 {
@@ -45,9 +40,4 @@ myPromise.then(function(value)
 {
   DrawBarChartMonthlyAverage("ChartG", chartTitle, parsedDataDate, parsedDataVal);
 });
- 
-function DoPageSpecificStuff()
-{
-	//not needed here
-}
 

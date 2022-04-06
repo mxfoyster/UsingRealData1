@@ -4,7 +4,6 @@ var chartTitle;
 var dataStream;
 var parsedDataDate = [0];
 var parsedDataVal = [0];
-var currentFileName;
 var myPromise;
 
 
@@ -16,7 +15,7 @@ function LoadDoc(fileName)
 	//crashing by maing it wait till the data is all processed
 	myPromise = new Promise(function(myResolve, myReject) 
 	{
-		fetch(fileName)
+		fetch(fileName) //fetch API is easier, cleaner and more reliable than XMLHttpRequest
 			.then(response => response.text()) 
 			.then(textString => 
 			{
@@ -31,7 +30,8 @@ function LoadDoc(fileName)
 //Removes and returns the title from the dataStream string
 function SplitTitle()
 {
-	for(i=0; i<dataStream.length; i++)
+	let d_S_Length = dataStream.length;
+	for(i=0; i<d_S_Length; i++)
 	{
 		if (dataStream.charAt(i)== '2') 
 		{
@@ -51,7 +51,8 @@ function ParseStreamData()
 	var currentString = "";
 	
 	//now break it down one character at a time into the arrays
-	for(i=0; i<dataStream.length; i++)
+	let d_S_Length = dataStream.length;
+	for(i=0; i<d_S_Length; i++)
 	{
 		if (dataStream.charAt(i) !="\n" && dataStream.charAt(i) !="\"")
 			currentString += dataStream.charAt(i); 	//we have to put in a string to avoid 'undefined' at 

@@ -1,15 +1,10 @@
-var currentFileName;
-var thisPageChart;
-var chart1Loaded = false;
-var chart2Loaded = false;
-
-
 //we can now load sychronously the charts thanks to our Promise within the LoadDoc func.
-LoadDoc("data/PaddleData1yr.csv");
-myPromise.then(function(value) 
+LoadDoc("data/PaddleData1yr.csv"); //load  and parse the data
+myPromise.then(function(value) //wait till data loaded and processed
 {
-  DrawBarChartMonthlyAverage("ChartA", chartTitle, parsedDataDate, parsedDataVal);
+  DrawBarChartMonthlyAverage("ChartA", chartTitle, parsedDataDate, parsedDataVal); //plot chart
 });
+
 LoadDoc("data/CanoeingData1yr.csv");
 myPromise.then(function(value) 
 {
@@ -28,8 +23,4 @@ myPromise.then(function(value)
   DrawBarChartMonthlyAverage("ChartD", chartTitle, parsedDataDate, parsedDataVal);
 });
  
-function DoPageSpecificStuff()
-{
-	//not needed here
-}
 
