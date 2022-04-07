@@ -32,7 +32,7 @@ function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray)
 	theseMonthsDat.push(thisNumber); //and the data
 	let barColours = BuildColorArray(theseMonths.length);	
 //****************************now we can plot using our new arrays*************************************
-	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle);
+	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle, colourOffset = 0);
 	
 }
 
@@ -40,7 +40,7 @@ function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray)
 //PLEASE NOTE: I know this is not DRY.... I would normally ditch ALL the above in favour of this 
 //average version. However, I wish to highlight the differences between these two hence I will 
 //leave the above function in as is!
-function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray)
+function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray, colourOffset = 0)
 {
 //****************************first we must convert the data******************************************
 	var theseMonths = [];
@@ -74,19 +74,19 @@ function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray)
 
 	theseMonths.push(months[thisMonth-1]); //store the last month when we've finished
 	theseMonthsDat.push(thisNumber/weeksPerMonth); //and the data average
-	let barColours = BuildColorArray(theseMonths.length);	
+	let barColours = BuildColorArray(theseMonths.length, colourOffset);	
 
 //****************************now we can plot using our new arrays*************************************
-	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle);	
+	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle, colourOffset);	
 }
 
 
-function BuildColorArray(arrayLength)
+function BuildColorArray(arrayLength, colourOffset)
 {
 	let colours = ["red","orange","yellow","green","blue"];
 	let colourArray = [];
 	for (i=0; i < arrayLength; i++)
-		colourArray.push(colours[(i % colours.length)]);
+		colourArray.push(colours[((i + colourOffset) % colours.length)]);
 	return colourArray; 
 }
 

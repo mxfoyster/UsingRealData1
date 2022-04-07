@@ -45,6 +45,10 @@ Overall, the code is tidier now thanks to these changes.
 
 It is VERY easy now to generate our bar chart. I made another page comparing different watersports by month with their search hit ratio. It only took a few minutes. I've pretty much proved the point now. I will have to consider what direction if any to take this to next. Meanwhile, I have uploaded this version to some space I have so we can see a live version! It's here [http://mark-foyster.epizy.com/watersports/index.html](http://mark-foyster.epizy.com/watersports/index.html). It's nothing special, but I had funa nd learnt something in the process.
 
+## Colour Offset
+
+When we have several bar charts on the same page, it looks a little boring with the same colour scheme. To fix this I added an optional parameter that feeds all the way to my `BuildColorArray()` function to put a start value at the end of my `DrawBarChartMonthlyAverage()` function within *ChartPlotters.js*. This allows me to offset the colours differently if I choose to on each insance of that chart type.
+
 ## What's Next?
 
 I really don't know. Open to ideas....

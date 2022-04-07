@@ -8,19 +8,19 @@ myPromise.then(function(value) //wait till data loaded and processed
 LoadDoc("data/CanoeingData1yr.csv");
 myPromise.then(function(value) 
 {
-  DrawBarChartMonthlyAverage("ChartB", chartTitle, parsedDataDate, parsedDataVal);
+  DrawBarChartMonthlyAverage("ChartB", chartTitle, parsedDataDate, parsedDataVal, 1);
 });
 
 LoadDoc("data/KayakingData1yr.csv");
 myPromise.then(function(value) 
 {
-  DrawBarChartMonthlyAverage("ChartC", chartTitle, parsedDataDate, parsedDataVal);
+  DrawBarChartMonthlyAverage("ChartC", chartTitle, parsedDataDate, parsedDataVal, 2);
 });
 
 LoadDoc("data/PaddleboardingData1yr.csv");
 myPromise.then(function(value) 
 {
-  DrawBarChartMonthlyAverage("ChartD", chartTitle, parsedDataDate, parsedDataVal);
+  DrawBarChartMonthlyAverage("ChartD", chartTitle, parsedDataDate, parsedDataVal, 3);
 });
  
 
