@@ -1,6 +1,6 @@
 const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; 
 
-function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray)
+function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray,colourOffset = 0)
 {
 //****************************first we must convert the data******************************************
 	var theseMonths = [];
@@ -30,9 +30,9 @@ function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray)
 	}
 	theseMonths.push(months[thisMonth-1]); //store the last month when we've finished
 	theseMonthsDat.push(thisNumber); //and the data
-	let barColours = BuildColorArray(theseMonths.length);	
+	let barColours = BuildColorArray(theseMonths.length, colourOffset);	
 //****************************now we can plot using our new arrays*************************************
-	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle, colourOffset = 0);
+	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle);
 	
 }
 
@@ -77,7 +77,7 @@ function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray, c
 	let barColours = BuildColorArray(theseMonths.length, colourOffset);	
 
 //****************************now we can plot using our new arrays*************************************
-	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle, colourOffset);	
+	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle);	
 }
 
 
