@@ -49,6 +49,10 @@ It is VERY easy now to generate our bar chart. I made another page comparing dif
 
 When we have several bar charts on the same page, it looks a little boring with the same colour scheme. To fix this I added an optional parameter that feeds all the way to my `BuildColorArray()` function to put a start value at the end of my `DrawBarChartMonthlyAverage()` function within *ChartPlotters.js*. This allows me to offset the colours differently if I choose to on each insance of that chart type.
 
+## Comparison Page
+
+I have another page where we compare the sports together. There's some noticable patterns. There is also a summary page but it's a holding page really for later.
+
 ## What's Next?
 
 I really don't know. Open to ideas....
