@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/zoom.css" />
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
 	<script type="text/javascript" src="js/menu.js" defer></script>
@@ -12,9 +13,13 @@
 	<script type="text/javascript" src="js/ChartPlotters.js" defer></script>
 	<script type="text/javascript" src="js/ConvertData.js" defer></script>
 	<script type="text/javascript" src="js/GeneralCharts.js" defer></script>
+	<script type="text/javascript" src="js/Zoom.js" defer></script>
 </head>
 
 <body>
+<div id="zoomBox">
+<!-- Canvas will be dynamically added here-->
+</div>
 <div class = "grid-container">
 
 	<div class="header" id="">
@@ -52,7 +57,7 @@
 
 	<div class="right" id="">
 	<h4>All Watersports</h4>
-	<p>What about the search trends across different watersports? We can us\e our charts to compare them. First, let's look at the general Paddlesports search again:</p>
+	<p>What about the search trends across different watersports? We can use our charts to compare them. First, let's look at the general Paddlesports search again:</p>
 
 	<h4>Search keyword "Paddlesports" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
 	<canvas id="ChartA"></canvas>
@@ -79,7 +84,7 @@
 	<p>This is a distinct change from the regualr pattern. The overall rate seems relatively consistent. A little stronger peak in the middle of summer but relatively consistent till this week it seems to have gone crazy! I wonder what that's about?</p>
 	<br/><br/>
 	
-	<p>How about a watersprot that has been VERY popular in recent years, Kitesurfing:</p>
+	<p>How about a watersport that has been VERY popular in recent years, Kitesurfing:</p>
 
 	<h4>Search keyword "Kitesurfing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
 	<canvas id="ChartE"></canvas>

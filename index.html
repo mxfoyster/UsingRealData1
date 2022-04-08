@@ -5,15 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/zoom.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
 	<script type="text/javascript" src="js/menu.js" defer></script>
 	
 	<script type="text/javascript" src="js/ChartPlotters.js" defer></script>
 	<script type="text/javascript" src="js/ConvertData.js" defer></script>
 	<script type="text/javascript" src="js/IndexCharts.js" defer></script>
+	<script type="text/javascript" src="js/Zoom.js" defer></script>
 </head>
 
 <body>
+<div id="zoomBox">
+<!-- Canvas will be dynamically added here-->
+</div>
 <div class = "grid-container">
 
 	<div class="header" id="">
@@ -55,10 +60,13 @@
 
 	<p>The information itself will simply compare the interest of various watersports in comparison to paddlesports at given times of the year. The data is based on the popularity of the search keyword relative to the time of year, it is not quantative data.</p>
 	
+	<p>You can <b>Double click on any graph</b> too zoom in and see it full screen.</p>
+	
 	<p>Here's the results for the keyword "paddlesports" between April 20201 and April 2022:</p>
 	
 	<h4>Search keyword "Paddlesports" (April 2021 - April 2022) Bar Chart</h4>
 	<canvas id="ChartA"></canvas>
+	
 	<br/><br/>
 	<p>This isn't terribly clear, let's try a line chart:</p>
 	<h4>Search keyword "Paddlesports" (April 2021 - April 2022) Line Chart</h4>
@@ -82,5 +90,6 @@
 	<p>Use how you like, but don't blame me :-D Mark Foyster 2022</p>
 	</div><!-- End of Footer -->
 </div>
+
 </body>
 </html>

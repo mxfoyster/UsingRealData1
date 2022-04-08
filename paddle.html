@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/zoom.css" />
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
 	<script type="text/javascript" src="js/menu.js" defer></script>
@@ -12,9 +13,13 @@
 	<script type="text/javascript" src="js/ChartPlotters.js" defer></script>
 	<script type="text/javascript" src="js/ConvertData.js" defer></script>
 	<script type="text/javascript" src="js/PaddleCharts.js" defer></script>
+	<script type="text/javascript" src="js/Zoom.js" defer></script>
 </head>
 
 <body>
+<div id="zoomBox">
+<!-- Canvas will be dynamically added here-->
+</div>
 <div class = "grid-container">
 
 	<div class="header" id="">
@@ -53,6 +58,8 @@
 	<div class="right" id="">
 	<h4>Paddlesports</h4>
 	<p>So, now we know how to load some data and graph it in a way that is easy to visualise, let's compare some paddlesports. Let's start with the monthly average bar chart:</p>
+	
+	<p>Don't forget, you can <b>Double click on any graph</b> too zoom in and see it full screen.</p>
 
 	<h4>Search keyword "Paddlesports" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
 	<canvas id="ChartA"></canvas>

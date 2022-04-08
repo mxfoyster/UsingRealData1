@@ -70,16 +70,16 @@ myPromise.then(function(value)
 //we call all our charts for this page here
 function PlotComparisonCharts()
 {
-	ComparisonChartA();
-	ComparisonChartB();
+	ComparisonChartA("ChartA");
+	ComparisonChartB("ChartB");
 }
 
 //the three Paddlesports
-function ComparisonChartA()
+function ComparisonChartA(canvID)
 {
 		var xValues = parsedDataDate;
 
-	new Chart("ChartA", 
+	new Chart(canvID, 
 	{
 		type: "line",
 		data: 
@@ -113,11 +113,11 @@ function ComparisonChartA()
 }
 
 //All the watersports together. This one will be a bit busy!
-function ComparisonChartB()
+function ComparisonChartB(canvID)
 {
 		var xValues = parsedDataDate;
 
-	new Chart("ChartB", 
+	new Chart(canvID, 
 	{
 		type: "line",
 		data: 
@@ -156,7 +156,7 @@ function ComparisonChartB()
 			},
 			{
 				label: "Rowing",
-				data: parsedKayakingData,
+				data: parsedRowingData,
 				borderColor: "purple",
 				fill: false
 			},
@@ -184,4 +184,15 @@ function ComparisonChartB()
 				legend: {display: true}
 			}
 		});
+}
+
+function ZoomA()
+{
+	ComparisonChartA("ZoomCanvas");
+	
+}
+
+function ZoomB()
+{
+	ComparisonChartB("ZoomCanvas");
 }

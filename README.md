@@ -53,10 +53,11 @@ When we have several bar charts on the same page, it looks a little boring with 
 
 I have another page where we compare the sports together. There's some noticable patterns. There is also a summary page but it's a holding page really for later.
 
-## What's Next?
+## Chart Zoom
 
-I really don't know. Open to ideas....
+By double clicking on a chart, we can now open a full screen version. Double click to zoom out... The double click gets around a limitation with Chart.js whereby there isn't a feature to prevent event bubbling. A single click would work but mean we zoom when we use some of the interactive features of `Chart.js`. I read somewhere they are considering making this resolvable on version 3 with *event propogation* options.
 
+Better user instructions will be needed to make this clearer and some of the tricks I have learnt implementing this change have made me think of refactoring some existing code further. We'll see what happens next!
 
 ## Problem with Github Push
 

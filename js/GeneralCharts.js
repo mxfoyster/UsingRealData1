@@ -1,43 +1,57 @@
+const generalChartFileStrings = ["Paddle","Surfing","Sailing","Rowing","Kitesurfing","Windsurfing","Swimming"]; 
+const generalChartColourOffsets = [0,2,4,3,5,1,0];
 
-//We use promises again. See PaddleCharts.js
-LoadDoc("data/PaddleData1yr.csv");
-myPromise.then(function(value) 
-{
-  DrawBarChartMonthlyAverage("ChartA", chartTitle, parsedDataDate, parsedDataVal);
-});
-LoadDoc("data/SurfingData1yr.csv");
-myPromise.then(function(value) 
-{
-  DrawBarChartMonthlyAverage("ChartB", chartTitle, parsedDataDate, parsedDataVal, 2);
-});
+var numOfGeneralCharts = generalChartColourOffsets.length;
+for (i=0; i < numOfGeneralCharts; i++)
+	LoadGeneralCharts (i);
 
-LoadDoc("data/SailingData1yr.csv");
-myPromise.then(function(value) 
+//the DRY friendly way we draw our charts.. Set true to plot to zoom box
+function LoadGeneralCharts (chartNumber, chartCanvasID = false)
 {
-  DrawBarChartMonthlyAverage("ChartC", chartTitle, parsedDataDate, parsedDataVal, 4);
-});
+	var filename = "data/" + generalChartFileStrings[chartNumber] + "Data1yr.csv";
+	
+	var thisCanvasName = "ZoomCanvas"; //doing it like this we avoid an 'else'
+	
+	if (chartCanvasID == false) thisCanvasName= "Chart" + String.fromCharCode((65 + chartNumber));
+	console.log (filename + " " + thisCanvasName);
+	LoadDoc(filename);
+	myPromise.then(function(value) 
+	{
+		DrawBarChartMonthlyAverage(thisCanvasName, chartTitle, parsedDataDate, parsedDataVal, generalChartColourOffsets[chartNumber]);
+	});
+}
 
-LoadDoc("data/RowingData1yr.csv");
-myPromise.then(function(value) 
+function ZoomA()
 {
-  DrawBarChartMonthlyAverage("ChartD", chartTitle, parsedDataDate, parsedDataVal, 3);
-});
+	LoadGeneralCharts (0, true);
+}
 
-LoadDoc("data/KitesurfingData1yr.csv");
-myPromise.then(function(value) 
+function ZoomB()
 {
-  DrawBarChartMonthlyAverage("ChartE", chartTitle, parsedDataDate, parsedDataVal, 5);
-});
+	LoadGeneralCharts (1, true);
+}
 
-LoadDoc("data/WindsurfingData1yr.csv");
-myPromise.then(function(value) 
+function ZoomC()
 {
-  DrawBarChartMonthlyAverage("ChartF", chartTitle, parsedDataDate, parsedDataVal, 1);
-});
+	LoadGeneralCharts (2, true);
+}
 
-LoadDoc("data/SwimmingData1yr.csv");
-myPromise.then(function(value) 
+function ZoomD()
 {
-  DrawBarChartMonthlyAverage("ChartG", chartTitle, parsedDataDate, parsedDataVal);
-});
+	LoadGeneralCharts (3, true);
+}
 
+function ZoomE()
+{
+	LoadGeneralCharts (4, true);
+}
+
+function ZoomF()
+{
+	LoadGeneralCharts (5, true);
+}
+
+function ZoomG()
+{
+	LoadGeneralCharts (6, true);
+}
