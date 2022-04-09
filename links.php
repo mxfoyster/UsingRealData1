@@ -22,7 +22,7 @@
 	</div><!-- End of header -->
 	
 	<div class="left" id="">
-	<?php $button="6"; include 'menu.php';?>
+	<?php $button="7"; include 'menu.php';?>
 	</div><!-- End of Left box -->
 
 	<div class="right" id="">

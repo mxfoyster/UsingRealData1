@@ -17,11 +17,15 @@
 	echo '</tr><tr>';
 	echo '<td class="menuGap"></td>';
 	echo '</tr><tr>';
-	echo '<td class="menuBtn" id="menuBtn5"'.Highlight($button,5).'>CODE</td>';
+	echo '<td class="menuBtn" id="menuBtn5"'.Highlight($button,5).'>OTHER STUFF</td>';
 	echo '</tr><tr>';
 	echo '<td class="menuGap"></td>';
 	echo '</tr><tr>';
-	echo '<td class="menuBtn" id="menuBtn6"'.Highlight($button,6).'>LINKS</td>';
+	echo '<td class="menuBtn" id="menuBtn6"'.Highlight($button,6).'>CODE</td>';
+	echo '</tr><tr>';
+	echo '<td class="menuGap"></td>';
+	echo '</tr><tr>';
+	echo '<td class="menuBtn" id="menuBtn7"'.Highlight($button,7).'>LINKS</td>';
 	echo '</tr>';
 	echo '</table>';
 

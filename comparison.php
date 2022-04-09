@@ -53,40 +53,10 @@
 	<p>Very similar pattern to all the watersports apart from <i>Kitesurfing</i> which appears to stand alone.</p>
 	<p><b>NOTE</b> you can turn each line on and off by clicking the appropriate colour on the legend at the top. This feature makes it easy to isolate a specific sport / just compare chosen sports etc.</p>
 
-		<!-- <h4>Search keyword "Sailing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartC">Chart D</canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Rowing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartD"></canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Kitesurfing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartE"></canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Windsurfing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartF"></canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Swimming" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartG"></canvas>
-		<p></p> -->
+		
 	<br/><br/>
 	<h4>CONCLUSION</h4>
-	<p>It's been very interestig playing with Chart.js and seeing some real data. I have learnt quite a bit on the journey and I can go abck and improve the code as time goes on.</p>
+	<p>It's been very interesting playing with Chart.js and seeing some real data. I have learnt quite a bit on the journey and I can go back and improve the code as time goes on.</p>
 	
 		
 	</div><!-- End of Right box -->
