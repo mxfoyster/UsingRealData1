@@ -1,10 +1,10 @@
 //url's. Alter / add for each new page
-const button1="index.html";
-const button2="paddle.html";
-const button3="general.html";
-const button4="comparison.html";
-const button5="summary.html";
-const button6="links.html";
+const button1="index.php";
+const button2="paddle.php";
+const button3="general.php";
+const button4="comparison.php";
+const button5="summary.php";
+const button6="links.php";
 
 //listeners
 document.getElementById("menuBtn1").onclick= function(){window.location.href = button1;};

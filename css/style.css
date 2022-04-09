@@ -2,13 +2,13 @@
 @font-face 
 {
 	font-family: Alegreya;
-	src: url(fonts/Alegreya-black.ttf);
+	src: url(fonts/Alegreya-black.ttf) format('truetype');
 }
 
 @font-face 
 {
 	font-family: Alegreya;
-	src: url(fonts/Alegreya-BlackItalic.ttf);
+	src: url(fonts/Alegreya-BlackItalic.ttf) format('truetype');
 	font-style: italic;
 }
 
