@@ -3,7 +3,7 @@ const button1="index.php";
 const button2="paddle.php";
 const button3="general.php";
 const button4="comparison.php";
-const button5="summary.php";
+const button5="code.php";
 const button6="links.php";
 
 //listeners

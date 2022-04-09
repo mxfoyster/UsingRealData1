@@ -17,7 +17,7 @@
 	echo '</tr><tr>';
 	echo '<td class="menuGap"></td>';
 	echo '</tr><tr>';
-	echo '<td class="menuBtn" id="menuBtn5"'.Highlight($button,5).'>SUMMARY</td>';
+	echo '<td class="menuBtn" id="menuBtn5"'.Highlight($button,5).'>CODE</td>';
 	echo '</tr><tr>';
 	echo '<td class="menuGap"></td>';
 	echo '</tr><tr>';
