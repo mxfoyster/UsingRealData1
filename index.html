@@ -3,7 +3,9 @@
 <head>
 	<title>Using Real Data</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="">
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/zoom.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
@@ -22,8 +24,8 @@
 <div class = "grid-container">
 
 	<div class="header" id="">
-	<h3>Using Real Data v1.0.0</h3>
-	<h3>Seasonal trends in Water Sports (UK)</h3>
+	<h1>Using Real Data v1.0.0</h1>
+	<h1>Seasonal trends in Water Sports (UK)</h1>
 	</div><!-- End of header -->
 	
 	<div class="left" id="">
@@ -55,7 +57,7 @@
 	</div><!-- End of Left box -->
 
 	<div class="right" id="">
-	<h4>Introduction</h4>
+	<h3>Introduction</h3>
 	<p>This exercise is to demonstrating the handling of real data presented through HTML on a website. The Google Trends data I am using has been downloaded as .csv file. This is the long way around. Google Trends offers the capability to embed graphs etc directly into a web page but that would defeat the object of the exercise. I intend to use Chart.js to display some of the information.</p>
 
 	<p>The information itself will simply compare the interest of various watersports in comparison to paddlesports at given times of the year. The data is based on the popularity of the search keyword relative to the time of year, it is not quantative data.</p>
@@ -76,7 +78,7 @@
 	<h4>Search keyword "Paddlesports" (April 2021 - April 2022) Bar Chart Monthly (Total)</h4>
 	<canvas id="ChartC"></canvas>
 	<br/><br/>
-	<p>This is a lot clearer. However, there is an issue. Different months have different amuntos of weeks in. Therefore lets re-do this with the average per month and see how much difference there is:</p>
+	<p>This is a lot clearer. However, there is an issue. Different months have different amounts of weeks in. Therefore lets re-do this with the average per month and see how much difference there is:</p>
 	<h4>Search keyword "Paddlesports" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
 	<canvas id="ChartD"></canvas>
 	<br/><br/>
