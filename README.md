@@ -61,7 +61,9 @@ Better user instructions will be needed to make this clearer and some of the tri
 
 ### Big Changes
 
-Now we have an *OTHER* page. On this page, you can choose a file and then choose by the press of a button how you would like to view it. Some of the existing code had to b e refactored to make this work! 
+Now we have an **OTHER** page. On this page, you can choose a file and then choose by the press of a button how you would like to view it. Some of the existing code had to b e refactored to make this work!
+
+Additionally, now we have decided PHP is included in this project, I decided to open one of the *.csv*'s and display a table with the data. The data is in an array so it could be used for whatever we want really. 
 
 ## Problem with Github Push
 
