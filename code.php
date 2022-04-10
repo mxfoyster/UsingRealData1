@@ -182,6 +182,65 @@ function Highlight($button, $thisButton)
 </pre>
 		
 	<p>I simply can add an inline style tag into the appropriate button to change the font button colour of that page. It's easy to update as I add pages. Whilst it's nothing super fancy, I quite liked it. All in all, the PHP does make it easier for me to add pages etc.</p>
+	
+	<p><b>UPDATE</b> So, since writing the above, I did get a bit more PHP into the project. I decided that on the <b>OTHER</b> page, I wanted to load a <i>.csv</i> using PHP and store it into two arrays just like I did with JavaScript. After that, I simply displayed it into a table utilising the styling I had already applied to the JavaScript table.</p>
+	<p>I remembered why I am quite fond of PHP doing this. While it can take some searching to work out the most efficient way to do things, there are so many built in functions available that they can save a LOT of code. Here's the code I used to load the file:</p>
+<pre>
+	$dateData = array();
+	$searchData = array();
+		
+	$csvFile = fopen("data/CanoeingData1yr.csv", "r") or die("Unable to open file!");
+	//read out the title lines (1 to 3)
+	$title = fgets($csvFile);
+	$title .= fgets($csvFile);
+	$title .= fgets($csvFile);
+		
+	//read out the rest into '$rawCsvData' array
+	while(!feof($csvFile)) 
+	{
+		$lineArray = fgetcsv($csvFile);
+		if ($lineArray != null)	//in case array is empty.. We must or we get a warning
+		{
+			array_push($dateData,$lineArray[0]);
+			array_push($searchData, $lineArray[1]);	
+		}
+	}
+	fclose($csvFile);	
+</pre>
+	<p>Now I have my data in two neat arrays just like I did with JavaScript. This means I could still do domething with it later which would not be an option if I just printed it out inline. So, next I wanted to display it as a table just like I did with JavaScript on the same page. I used the same styling tags which saved code. Then I just iterated through the array and formatted the date in the same way as before:</p>
+<pre>
+$longMonths = array("January","February","March","April","May","June","July","August","September","October","November","December");
+echo '&lt;h4&gt;'.$title.'&lt;/h4&gt;&lt;table id="csvDataTableB"&gt;';
+echo '&lt;tr&gt;&lt;th class="headRow"&gt;DATE&lt;/th&gt;&lt;th class="headRow"&gt;HIT RATIO&lt;/th&gt;&lt;/tr&gt;';
+for($i=0; $i&lt;(count($dateData)); $i++)
+{
+  $splitDate = explode('-',$dateData[$i]); //separate date into separate array via the dashes
+  $dateDay = intval($splitDate[2]);
+  //Remember this from our JavaScript?
+  switch ($dateDay % 10)
+  {
+	case 1:
+	$dayFollower = "&lt;span class=\"subScript\"&gt;st&lt;/span&gt; ";
+	break;
+	case 2:
+	$dayFollower = "&lt;span class=\"subScript\"&gt;nd&lt;/span&gt; ";
+	break;
+	case 3:
+	$dayFollower = "&lt;span class=\"subScript\"&gt;rd&lt;/span&gt; ";
+	break;
+	default:
+	$dayFollower = "&lt;span class=\"subScript\"&gt;th&lt;/span&gt; ";
+	break;
+  }
+  $dateDay.=$dayFollower;
+	
+  $thisMonthAsIndex = (intval($splitDate[1])-1);
+  echo '&lt;tr&gt;&lt;td class="leftcol"&gt;'.$dateDay.' '.$longMonths[$thisMonthAsIndex].' '.$splitDate[0];
+  echo '&lt;/td&gt;&lt;td class="rightcol"&gt;'.$searchData[$i].'&lt;/td&gt;&lt;/tr&gt;';
+}
+</pre>
+
+	<p>One of  the line's I have borken down into two lines just on here so it fits better. This isn't perfect code, some of it should probably be extracted to functions but it works exactly the way I wanted it to. I don't know if I'll do any more with this as I need to start a new project but I've really enjoyed this one.</p>
 	</div><!-- End of Right box -->
 
 	<div class="footer" id="">

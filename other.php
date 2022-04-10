@@ -80,7 +80,7 @@
 		while(!feof($csvFile)) 
 		{
 			$lineArray = fgetcsv($csvFile);
-			if ($lineArray != null)				//$lineArray = array (1,1); //in case array is empty.. We must or we get a warning
+			if ($lineArray != null)				//in case array is empty.. We must or we get a warning
 			{
 				array_push($dateData,$lineArray[0]);
 				array_push($searchData, $lineArray[1]);	
