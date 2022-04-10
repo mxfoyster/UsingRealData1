@@ -2,7 +2,7 @@
 @font-face 
 {
 	font-family: Alegreya;
-	src: url(fonts/Alegreya-black.ttf) format('truetype');
+	src: url(fonts/Alegreya-Black.ttf) format('truetype');
 }
 
 @font-face 
@@ -136,7 +136,7 @@ pre
 }
 
 /*The chart boxes*/
-#ChartA, #ChartB, #ChartC, #ChartD
+#ChartA, #ChartB, #ChartC, #ChartD, #ChartE, #ChartF, #ChartG
 {
 		width: auto;
 		height: auto;

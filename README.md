@@ -59,6 +59,10 @@ By double clicking on a chart, we can now open a full screen version. Double cli
 
 Better user instructions will be needed to make this clearer and some of the tricks I have learnt implementing this change have made me think of refactoring some existing code further. We'll see what happens next!
 
+### Big Changes
+
+Now we have an *OTHER* page. On this page, you can choose a file and then choose by the press of a button how you would like to view it. Some of the existing code had to b e refactored to make this work! 
+
 ## Problem with Github Push
 
 There is a potential problem. When pushing the data file, it decided to replace our `lf`'s with `crlf`'s. Therefore, if anyone clones this and uses the datafile as is, I am doubtful it will parse correctly! You can always download your own?  
