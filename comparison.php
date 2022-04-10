@@ -25,41 +25,18 @@
 <div class = "grid-container">
 
 	<div class="header" id="">
-	<h1>Using Real Data v1.0.0</h1>
-	<h1>Seasonal trends in Water Sports (UK)</h1>
+	<?php include 'header.php';?>
 	</div><!-- End of header -->
 	
 	<div class="left" id="">
-	<table id="sideMenu">
-	<tr>
-	<td class="menuBtn" id="menuBtn1">HOME</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn2">PADDLESPORTS</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn3">ALL WATERSPORTS</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn4">COMPARISON</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn5">SUMMARY</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn6">LINKS</td>
-	</tr>
-	</table>
+	<?php $button="4"; include 'menu.php';?>
 	</div><!-- End of Left box -->
 
 	<div class="right" id="">
 	<h3>Comparison</h3>
 	<p>Now it's time for some different charts where we compare the different watersports to each other. First, let's compare the three paddlesports of Kayaking, Canoeing and Paddleboarding to each other on a line chart week by week.</p>
+
+	<p>Don't forget you can <b>Double click on any graph</b> too zoom in and see it full screen.</p>
 
 	<h4>Search keyword "Individual Paddlesports Comparison" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
 	<canvas id="ChartA"></canvas>
@@ -76,48 +53,16 @@
 	<p>Very similar pattern to all the watersports apart from <i>Kitesurfing</i> which appears to stand alone.</p>
 	<p><b>NOTE</b> you can turn each line on and off by clicking the appropriate colour on the legend at the top. This feature makes it easy to isolate a specific sport / just compare chosen sports etc.</p>
 
-		<!-- <h4>Search keyword "Sailing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartC">Chart D</canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Rowing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartD"></canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Kitesurfing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartE"></canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Windsurfing" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartF"></canvas>
-			<p></p>
-			<br/><br/>
-			
-			<p></p>
-			
-			<h4>Search keyword "Swimming" (April 2021 - April 2022) Bar Chart Monthly (Average)</h4>
-			<canvas id="ChartG"></canvas>
-		<p></p> -->
+		
 	<br/><br/>
 	<h4>CONCLUSION</h4>
-	<p>It's been very interestig playing with Chart.js and seeing some real data. I have learnt quite a bit on the journey and I can go abck and improve the code as time goes on.</p>
+	<p>It's been very interesting playing with Chart.js and seeing some real data. I have learnt quite a bit on the journey and I can go back and improve the code as time goes on.</p>
 	
 		
 	</div><!-- End of Right box -->
 
 	<div class="footer" id="">
-	<p>Data downloaded from <a href="https://trends.google.com/">https://trends.google.com/</a> April 2022</p>
-	<p>This project is released under GNU/GPL 3.00 license. Repository at <a href="https://github.com/mxfoyster/UsingRealData1">https://github.com/mxfoyster/UsingRealData1</a></p>
-	<p>Use how you like, but don't blame me :-D Mark Foyster 2022</p>
+	<?php include 'footer.php';?>
 	</div><!-- End of Footer -->
 </div>
 </body>

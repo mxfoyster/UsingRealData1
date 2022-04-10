@@ -2,13 +2,13 @@
 @font-face 
 {
 	font-family: Alegreya;
-	src: url(fonts/Alegreya-black.ttf);
+	src: url(fonts/Alegreya-Black.ttf) format('truetype');
 }
 
 @font-face 
 {
 	font-family: Alegreya;
-	src: url(fonts/Alegreya-BlackItalic.ttf);
+	src: url(fonts/Alegreya-BlackItalic.ttf) format('truetype');
 	font-style: italic;
 }
 
@@ -44,7 +44,6 @@ h3
 
 h4
 {	
-/* 	font-family: Alegreya-Italic; */
 	font-size: 1.2rem;
 	text-align: center;
 	font-style: italic;
@@ -56,6 +55,25 @@ p
 	font-family: verdana;
 	margin-left: 2rem;
 	margin-right: 2rem;
+}
+
+code
+{
+	font-size: 1.2rem;
+	color: blue; 
+}
+
+pre
+{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.5rem;
+	font-size:calc(6px + 0.5vw);
+	background-color: #222222;
+	color:  lightblue;
+	border-style: inset;
+	border-radius: 10px;
+	max-width: 95%;
 }
 
 /* Style the header */
@@ -118,7 +136,7 @@ p
 }
 
 /*The chart boxes*/
-#ChartA, #ChartB, #ChartC, #ChartD
+#ChartA, #ChartB, #ChartC, #ChartD, #ChartE, #ChartF, #ChartG
 {
 		width: auto;
 		height: auto;

@@ -1,0 +1,45 @@
+#csvDataTable, #csvDataTableB
+{
+	font-family: verdana;
+	font-size: 1.5rem;
+	color: black;
+	margin: auto;
+	border: solid 1px;
+	border-style: solid;
+}
+
+.oddRow
+{
+  background-color: #BBBBBB;
+}
+
+.leftcol
+{
+	border-right: 1px solid;
+	border-top: 1px solid;
+	text-align: center;
+}
+
+.rightcol
+{
+	border-top: 1px solid;
+	text-align: center;
+}
+
+.headRow
+{
+	text-align: center;
+	border-right: 1px solid;
+	background-color: #ccccff;
+}
+
+.subScript
+{
+	font-size: 0.6rem;
+}
+
+#SelectedChart
+{
+	/* visibility: hidden; */
+	
+}

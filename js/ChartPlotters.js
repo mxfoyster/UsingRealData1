@@ -1,5 +1,10 @@
 const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; 
 
+//we need these in global scope to separate out our date conversion function
+var parsedDataDateMonthly = [0];
+var parsedDataValMonthly = [0];
+
+// NOTE... This version is only left in here for legacy reasons. in fact it's only used ONCE
 function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray,colourOffset = 0)
 {
 //****************************first we must convert the data******************************************
@@ -37,12 +42,17 @@ function DrawBarChartMonthly(chartCanvasID, chartTitle, xArray, yArray,colourOff
 }
 
 
-//PLEASE NOTE: I know this is not DRY.... I would normally ditch ALL the above in favour of this 
-//average version. However, I wish to highlight the differences between these two hence I will 
-//leave the above function in as is!
+//THIS IS THE NEW VERSION THAT AVERAGES
 function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray, colourOffset = 0)
 {
-//****************************first we must convert the data******************************************
+	ConvertDataToMonthly(parsedDataDate,parsedDataVal);		
+	let barColours = BuildColorArray(parsedDataDate.length, colourOffset);
+	ChartPlotter(chartCanvasID, parsedDataDateMonthly, parsedDataValMonthly, barColours, "bar", chartTitle);
+}
+
+//takes arguments of our arrays from file and converts them from weeks to months
+function ConvertDataToMonthly(xArray,yArray)
+{
 	var theseMonths = [];
 	const theseMonthsDat = [];
 	let thisMonth = xArray[0].slice(5,7); //get first month from data
@@ -53,11 +63,11 @@ function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray, c
 	let xArr_Length = xArray.length;
 	for (i=0; i < xArr_Length; i++)
 	{	
-			if (xArray[i].slice(5,7) == thisMonth) //if still on same month
-			{
+		if (xArray[i].slice(5,7) == thisMonth) //if still on same month
+		{
 			thisNumber += Number(yArray[i]); //add data at this index to the month
 			weeksPerMonth++;
-			}
+		}
 		else
 		{
 			theseMonths.push(months[thisMonth-1]); //store the month 
@@ -74,12 +84,13 @@ function DrawBarChartMonthlyAverage(chartCanvasID, chartTitle, xArray, yArray, c
 
 	theseMonths.push(months[thisMonth-1]); //store the last month when we've finished
 	theseMonthsDat.push(thisNumber/weeksPerMonth); //and the data average
-	let barColours = BuildColorArray(theseMonths.length, colourOffset);	
-
-//****************************now we can plot using our new arrays*************************************
-	ChartPlotter(chartCanvasID, theseMonths, theseMonthsDat, barColours, "bar", chartTitle);	
+	
+	if (theseMonths.length == 13) theseMonths[12] += " yr2";
+	
+	parsedDataDateMonthly = [...theseMonths];
+	parsedDataValMonthly = [...theseMonthsDat];
+	
 }
-
 
 function BuildColorArray(arrayLength, colourOffset)
 {
@@ -92,7 +103,7 @@ function BuildColorArray(arrayLength, colourOffset)
 
 
 //the Chart.js code extracted to separate function for DRY purposes
-function ChartPlotter(chartCanvasID, xArray, yArray, colours, type, chartTitle)
+function ChartPlotter(chartCanvasID, xArray, yArray, colours, type, chartTitle, displayLegend = false)
 {
 		new Chart(chartCanvasID, {
 		type: type,
@@ -101,7 +112,7 @@ function ChartPlotter(chartCanvasID, xArray, yArray, colours, type, chartTitle)
 		datasets:[{ backgroundColor: colours, data: yArray}]
 		},
 		options: {
-		legend: {display: false},
+		legend: {display: displayLegend},
 		title: { display: true, text: chartTitle}
 		}
 	}); 

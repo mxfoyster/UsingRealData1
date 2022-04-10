@@ -24,36 +24,11 @@
 <div class = "grid-container">
 
 	<div class="header" id="">
-	<h1>Using Real Data v1.0.0</h1>
-	<h1>Seasonal trends in Water Sports (UK)</h1>
+	<?php include 'header.php';?>
 	</div><!-- End of header -->
 	
 	<div class="left" id="">
-	<table id="sideMenu">
-	<tr>
-	<td class="menuBtn" id="menuBtn1">HOME</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn2">PADDLESPORTS</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn3">ALL WATERSPORTS</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn4">COMPARISON</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn5">SUMMARY</td>
-	</tr><tr>
-	<td class="menuGap"></td>
-	</tr><tr>
-	<td class="menuBtn" id="menuBtn6">LINKS</td>
-	</tr>
-	</table>
+	<?php $button="1"; include 'menu.php';?>
 	</div><!-- End of Left box -->
 
 	<div class="right" id="">
@@ -87,9 +62,7 @@
 	</div><!-- End of Right box -->
 
 	<div class="footer" id="">
-	<p>Data downloaded from <a href="https://trends.google.com/">https://trends.google.com/</a> April 2022</p>
-	<p>This project is released under GNU/GPL 3.00 license. Repository at <a href="https://github.com/mxfoyster/UsingRealData1">https://github.com/mxfoyster/UsingRealData1</a></p>
-	<p>Use how you like, but don't blame me :-D Mark Foyster 2022</p>
+	<?php include 'footer.php';?>
 	</div><!-- End of Footer -->
 </div>
 
