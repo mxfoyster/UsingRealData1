@@ -58,14 +58,16 @@
 <!-- Canvas will be dynamically added here<canvas id="SelectedChart"></canvas>-->
 	</div>
 	
+	<div class="scrollingTables">
 	<table id="csvDataTable" class="csvDatTabClass">
 	<!-- Table contents will go here dynamically -->
 	</table>
-	
+	</div>
 	<hr/>
 	<h3>Playing with PHP</h3>
 	<p>So, seeing as we now have PHP in our project, it would be rude not to use it's functionality to have a go at processing our raw data. We can load our CanoeingData1yr.csv data file and display a table just like the one with JavaScript above pretty easily.</p>
-	
+	<input type="button" value="SHOW / HIDE PHP TABLE" onClick="TogglePhpTable()">
+	<div id="phpTable" class="scrollingTables">
 	<?php
 		$dateData = array();
 		$searchData = array();
@@ -89,7 +91,7 @@
 		fclose($csvFile);
 
 		//display the data NOTE we could have just done this while loading it BUT this way,
-		//we have the data stored in our arrays if we ant to do more with it later...
+		//we have the data stored in our arrays if we want to do more with it later...
 		$longMonths = array("January","February","March","April","May","June","July","August","September","October","November","December");
 		echo '<h4>'.$title.'</h4><table id="csvDataTableB">';
 		echo '<tr><th class="headRow">DATE</th><th class="headRow">HIT RATIO</th></tr>';
@@ -114,12 +116,15 @@
 				break;
 			}
 			$dateDay.=$dayFollower;
-			
+			$rowStyle='';
+			if (($i%2) != 0) $rowStyle='style="background-color: #BBBBBB;"';
+
 			$thisMonthAsIndex = (intval($splitDate[1])-1);
-			echo '<tr><td class="leftcol">'.$dateDay.' '.$longMonths[$thisMonthAsIndex].' '.$splitDate[0].'</td><td class="rightcol">'.$searchData[$i].'</td></tr>';
+			echo '<tr '. $rowStyle .'><td class="leftcol">'.$dateDay.' '.$longMonths[$thisMonthAsIndex].' '.$splitDate[0].'</td><td class="rightcol">'.$searchData[$i].'</td></tr>';
 		}
 		?>
 	</table>
+	</div>
 	</div><!-- End of Right box --> 
 
 	<div class="footer" id="">

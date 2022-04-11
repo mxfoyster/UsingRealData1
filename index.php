@@ -39,7 +39,7 @@
 	
 	<p>You can <b>Double click on any graph</b> too zoom in and see it full screen.</p>
 	
-	<p>Here's the results for the keyword "paddlesports" between April 20201 and April 2022:</p>
+	<p>Here's the results for the keyword "paddlesports" between April 2021 and April 2022:</p>
 	
 	<h4>Search keyword "Paddlesports" (April 2021 - April 2022) Bar Chart</h4>
 	<canvas id="ChartA"></canvas>

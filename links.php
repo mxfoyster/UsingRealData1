@@ -34,11 +34,8 @@
 	<a href="https://www.chartjs.org/">Chart.js Homepage</a><br/><br/>
 
 	
-		<!-- <h4>Search keyword "Paddlesports" (April 2021 - April 2022)</h4>
-			<canvas id="ChartA"></canvas>
-			
-			<canvas id="ChartB"></canvas>
-		</div><!-- End of Right box --> 
+		
+	</div><!-- End of Right box --> 
 
 	<div class="footer" id="">
 	<?php include 'footer.php';?>

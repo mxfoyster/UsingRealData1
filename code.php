@@ -48,7 +48,7 @@
 				dataStream = textString;	
 				SplitTitle();
 				ParseStreamData();
-				myResolve("Success"); //Promise resolved.. 
+				myResolve("Success"); //Promise resolved..
 				});
 		});
 	}		
@@ -240,7 +240,7 @@ for($i=0; $i&lt;(count($dateData)); $i++)
 }
 </pre>
 
-	<p>One of  the line's I have borken down into two lines just on here so it fits better. This isn't perfect code, some of it should probably be extracted to functions but it works exactly the way I wanted it to. I don't know if I'll do any more with this as I need to start a new project but I've really enjoyed this one.</p>
+	<p>One of  the line's I have broken down into two lines just on here so it fits better. This isn't perfect code, some of it should probably be extracted to functions but it works exactly the way I wanted it to. I don't know if I'll do any more with this as I need to start a new project but I've really enjoyed this one.</p>
 	</div><!-- End of Right box -->
 
 	<div class="footer" id="">

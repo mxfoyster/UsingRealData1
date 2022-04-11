@@ -2,6 +2,7 @@ const longMonths = ["January","February","March","April","May","June","July","Au
 const dataTable = document.getElementById("csvDataTable");
 const chartContainer = document.getElementById("SelectedChartBox");
 
+
 function GetFileToDisplay()
 {
 	let fName = document.forms["fileForm"]["fileSelect"].value;
@@ -16,13 +17,17 @@ function GetFileToDisplay()
 		var rowClassString = "";
 		for (i=0; i < arrayLength; i++)
 		{
-			if (i%2 != 0) rowClassString = "class=\"oddRow\"";
-			var tableString = "<tr " + rowClassString +"><td class=\"leftcol\">" + ConvertDate(parsedDataDate[i]);
-			tableString += "</td><td  class=\"rightcol\">" + parsedDataVal[i] + "</td></tr>";
-			dataTable.innerHTML += tableString;
+			var rowHandle = dataTable.insertRow(i+1);
+			if (i%2 != 0) rowHandle.style = "background-color: #BBBBBB;";
+			
+			var tableString = "<td class=\"leftcol\">" + ConvertDate(parsedDataDate[i]);
+			tableString += "</td><td  class=\"rightcol\">" + parsedDataVal[i] + "</td>";
+			//dataTable.innerHTML += tableString;
+			rowHandle.innerHTML = tableString;
 			rowClassString="";
 		}
 	});
+	console.log (dataTable.innerHTML);
 }
 
 
@@ -98,5 +103,15 @@ function PlotPCM()
 		var pieColours = ["red", "blue", "yellow", "green", "darkgray", "purple", "black", "lightblue", "pink", "orange", "darkblue", "darkmagenta", "deeppink"];
 		ChartPlotter("SelectedChart", parsedDataDateMonthly, parsedDataValMonthly, pieColours, "pie", chartTitle, true)
 	});
+}
+
+function TogglePhpTable()
+{
+	if (document.getElementById("phpTable").style.visibility == "visible")
+	{
+		document.getElementById("phpTable").style.visibility = "hidden";
+		return
+	}
+	document.getElementById("phpTable").style.visibility = "visible";
 }
 

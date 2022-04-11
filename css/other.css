@@ -38,8 +38,22 @@
 	font-size: 0.6rem;
 }
 
-#SelectedChart
+.scrollingTables tbody
 {
-	/* visibility: hidden; */
-	
+	display: block;
+	max-height: 25rem;
+	overflow-y: scroll;
 }
+
+.scrollingTables:hover
+{
+	cursor: s-resize;
+}
+
+#phpTable
+{
+	visibility: hidden;
+} 
+
+
+
